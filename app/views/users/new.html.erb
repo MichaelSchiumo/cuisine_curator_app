@@ -1,0 +1,18 @@
+<h1>Create Your Profile on Cuisine Curator</h1>
+
+<%= form_for @user do |f| %>
+
+<%= f.label :name %><br>
+<%= f.text_field :name %><br><br />
+
+<%= f.label :password %><br>
+<%= f.password_field :password %><br><br />
+
+How many years have you been cooking?<br>
+ <%= f.number_field :years_experience %><br><br />
+
+<%= f.label :location %><br>
+<%= f.text_field :location %><br><br />
+
+<%= f.submit %>
+<% end %>
