@@ -12,7 +12,7 @@ class CuisinesController < ApplicationController
     else
       redirect_to :new
     end
-  end      
+  end
 
   def index
     @cuisines = Cuisine.all
@@ -35,10 +35,10 @@ class CuisinesController < ApplicationController
 
   private
       def set_cuisine
-        @cuisine = Cusine.find(params[:id])
+        @cuisine = Cuisine.find(params[:id])
       end
 
       def cuisine_params
-        params.require(:cuisine).permit(:category, :classification, :name)
+        params.require(:cuisine).permit(:category, :classification)
       end
 end
