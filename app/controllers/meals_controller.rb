@@ -33,11 +33,11 @@ class MealsController < ApplicationController
     else
       render :new
     end
-  end            
+  end
 
   private
     def meal_params
-      params.require(:meal).require(:type, :difficulty, :rating, :user_id, :cuisine_id, :name, :prep_time, :notes, :ingredients)
+      params.require(:meal).permit(:type, :difficulty, :rating, :name, :prep_time, :notes, :ingredients)
     end
 
     def set_meal
