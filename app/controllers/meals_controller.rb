@@ -7,7 +7,13 @@ class MealsController < ApplicationController
 
   def index
     @meals = Meal.all
-  end    
+  end
+
+  def show
+  end
+
+  def edit
+  end        
 
   private
     def meal_params
