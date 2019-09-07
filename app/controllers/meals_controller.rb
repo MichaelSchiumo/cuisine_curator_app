@@ -1,7 +1,13 @@
 class MealsController < ApplicationController
   before_action :set_meal, only: [:edit, :show, :update]
 
+  def new
+    @meal = Meal.new
+  end
 
+  def index
+    @meals = Meal.all
+  end    
 
   private
     def meal_params
@@ -10,5 +16,5 @@ class MealsController < ApplicationController
 
     def set_meal
       @meal = Meal.find(params[:id])
-    end  
+    end
 end
