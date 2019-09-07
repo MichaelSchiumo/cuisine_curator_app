@@ -2,5 +2,8 @@
 
 <% @cuisines.each do |cuisine| %>
   Category: <%= cuisine.category %><br><br />
-  Classification: <%= cuisine.classification %>
+  Classification: <%= cuisine.classification %><br><br/ >
 <% end %>
+
+Add To Your Collection!<br>
+<%= link_to "Add New Cuisine", new_cuisine_path %>
