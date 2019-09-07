@@ -11,12 +11,22 @@
 
   <body>
     <!-- <div class='col-xs-3'> -->
-    <strong><a class="navbar-brand" href="<%= root_url %>"/>Home</a></strong>
-    <strong><a class="navbar-brand" href="<%= login_path %>"/>Log In</a></strong>
-    <strong><a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a></strong>
-    <strong><%= link_to "Sign Out", signout_path, method: "delete" %></strong>
-    <!-- </div> -->
+    <% if current_user %>
+      <strong><%= link_to "Home", root_url, {class: "navbar-brand"} %></strong>
+      <strong><%= link_to "Cuisines", cuisines_path, {class: "navbar-brand"} %></strong>
+      <strong><%= link_to "Meals", meals_path, {class: "navbar-brand"} %></strong>
+      <strong><%= link_to "Sign Out", signout_path, {class: "navbar-brand", method: "delete"} %></strong>
+    <% else %>
+      <strong><%= link_to "Log In", login_path, {class: "navbar-brand"} %></strong>
+      <strong><%= link_to "Sign Up", new_user_path, {class: "navbar-brand"} %></strong>
+      <strong><%= link_to "Home", root_url, {class: "navbar-brand"} %></strong>
+    <% end %>
+
+
+
     <%= yield %>
+
+    <h3>This is a Michael J. Schiumo™ production.</h3>
 
 
   </body>
