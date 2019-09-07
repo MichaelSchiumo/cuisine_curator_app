@@ -5,6 +5,10 @@ class MealsController < ApplicationController
 
   private
     def meal_params
-      params.require(:meal).require(:type, :difficulty, :rating, :user_id, :cuisine_id, :name)
+      params.require(:meal).require(:type, :difficulty, :rating, :user_id, :cuisine_id, :name, :prep_time, :notes, :ingredients)
+    end
+
+    def set_meal
+      @meal = Meal.find(params[:id])
     end  
 end
