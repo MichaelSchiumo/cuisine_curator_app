@@ -13,7 +13,16 @@ class CuisinesController < ApplicationController
   end
 
   def edit
-  end    
+  end
+
+  def update
+    @cuisine.update(cuisine_params)
+    if @cuisine.save
+      redirect_to cuisine_path(@cuisine)
+    else
+      render :edit
+    end
+  end
 
   private
       def set_cuisine
