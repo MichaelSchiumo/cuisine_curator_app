@@ -1,18 +1,18 @@
 
 <%= form_for @meal do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :type %>
-  <%= f.text_field :type %>
-  <%= f.label :difficulty %>
-  <%= f.number_field :difficulty %>
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
-  <%= f.label :prep_time %>
-  <%= f.number_field :prep_time %>
-  <%= f.label :ingredients %>
-  <%= f.text_area :ingredients %>
-  <%= f.label :notes %>
-  <%= f.text_area :notes %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br><br/ >
+  <%= f.label :type %><br>
+  <%= f.text_field :type %><br><br/ >
+  <%= f.label :difficulty %><br>
+  <%= f.number_field :difficulty %><br><br/ >
+  <%= f.label :rating %><br>
+  <%= f.number_field :rating %><br><br />
+  <%= f.label :prep_time %><br>
+  <%= f.number_field :prep_time %><br><br />
+  <%= f.label :ingredients %><br>
+  <%= f.text_area :ingredients %><br>
+  <%= f.label :notes %><br>
+  <%= f.text_area :notes %><br><br/ >
   <%= f.submit %>
-<% end %>   
+<% end %>
