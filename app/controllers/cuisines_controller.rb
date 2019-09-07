@@ -9,6 +9,12 @@ class CuisinesController < ApplicationController
     @cuisines = Cuisine.all
   end
 
+  def show
+  end
+
+  def edit
+  end    
+
   private
       def set_cuisine
         @cuisine = Cusine.find(params[:id])
