@@ -5,9 +5,16 @@ Rails.application.routes.draw do
     resources :meals, only: [:new, :create, :index, :show]
   end
 
+  get '/cuisines/:id/meals/new' => 'meals#new'
+
+  resources :meals
+
   root 'welcome#home'
+
   resources :users
+
   get '/login' => 'sessions#new'
+
   post '/login' => 'sessions#create'
   # delete '/signout' => 'sessions#destroy'
   delete '/signout' => 'sessions#destroy'
