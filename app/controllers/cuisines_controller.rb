@@ -28,4 +28,8 @@ class CuisinesController < ApplicationController
       def set_cuisine
         @cuisine = Cusine.find(params[:id])
       end
+
+      def cuisine_params
+        params.require(:cuisine).permit(:category, :classification, :name)
+      end  
 end
