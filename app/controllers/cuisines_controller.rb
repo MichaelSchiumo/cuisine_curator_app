@@ -1,4 +1,5 @@
 class CuisinesController < ApplicationController
+  before_action :set_cuisine, only: [:edit, :show, :update]
 
   def new
     @cuisine = Cuisine.new
@@ -6,5 +7,10 @@ class CuisinesController < ApplicationController
 
   def index
     @cuisines = Cuisine.all
-  end    
+  end
+
+  private
+      def set_cuisine
+        @cuisine = Cusine.find(params[:id])
+      end
 end
