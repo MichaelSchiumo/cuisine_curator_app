@@ -23,7 +23,17 @@ class MealsController < ApplicationController
     else
       render :edit
     end
-  end      
+  end
+
+  def create
+    @meal = Meal.new(meal_params)
+    if @meal.save
+      flash[:message] = "Your meal has been created."
+      redirect_to meal_path(@meal)
+    else
+      render :new
+    end
+  end            
 
   private
     def meal_params
