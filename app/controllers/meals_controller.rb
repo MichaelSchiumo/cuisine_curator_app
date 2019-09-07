@@ -13,7 +13,17 @@ class MealsController < ApplicationController
   end
 
   def edit
-  end        
+  end
+
+  def update
+    @meal.update(meal_params)
+    if @meal.save
+      flash[:message] = "Your meal has been updated!"
+      redirect_to meal_path(@meal)
+    else
+      render :edit
+    end
+  end      
 
   private
     def meal_params
