@@ -3,7 +3,7 @@
 <% @cuisines.each do |cuisine| %>
   Category: <%= cuisine.category %><br><br />
   Classification: <%= cuisine.classification %><br><br/ >
-  <li><%= link_to "Go on #{cuisine.category}", cuisine_path(cuisine) %></li> 
+  <li><%= link_to "Go to #{cuisine.classification} Cuisine", cuisine_path(cuisine) %></li><br><br/ > 
 <% end %>
 
 Add To Your Collection!<br>
