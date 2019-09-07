@@ -5,6 +5,15 @@ class CuisinesController < ApplicationController
     @cuisine = Cuisine.new
   end
 
+  def create
+    @cuisine = Cuisine.new(cuisine_params)
+    if @cuisine.save
+      redirect_to cuisine_path(@cuisine)
+    else
+      redirect_to :new
+    end
+  end      
+
   def index
     @cuisines = Cuisine.all
   end
@@ -31,5 +40,5 @@ class CuisinesController < ApplicationController
 
       def cuisine_params
         params.require(:cuisine).permit(:category, :classification, :name)
-      end  
+      end
 end
