@@ -1,11 +1,3 @@
 <h1>Create Your Cuisine!</h1>
 
-<%= form_for @cuisine do |f| %>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br><br/ >
-  <%= f.label :category %><br>
-  <%= f.text_field :category %><br><br/ >
-  <%= f.label :classification %><br>
-  <%= f.text_field :classification %><br><br/ >
-  <%= f.submit %>
-<% end %>
+<%= render partial: 'form', locals: {cuisine: @cuisine} %>
