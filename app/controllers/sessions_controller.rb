@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
   def new
     @user = User.new
   end
-    
+
   def create
-    @user = User.find_by(email: params[:user][:email])
-    if @user && @user.authenticate(params[:password])
+    @user = User.find_by(name: params[:user][:name])
+    if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       flash[:message] = "Welcome to Cuisine Curator! Let's start making some delicious meals!"
       redirect_to user_path(@user)
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.destroy :user_id
+    session.destroy
     redirect_to root_path
   end
 end

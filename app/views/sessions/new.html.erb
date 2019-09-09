@@ -1,9 +1,13 @@
+<% if flash[:message] %>
+<%= flash[:message] %>
+<% end %>
+
 <h1>Log In</h1>
 
-<%= form_for @user, url: {action: "login"} do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :name %><br /><br />
-    <%= f.label :password %>
-    <%= f.password_field :password %><br /><br />
-    <%= f.submit "Log In" %>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name, nil, name: "user[name]" %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password, nil, name: "user[password]" %>
+  <%= submit_tag "Submit" %>
 <% end %>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :meals, only: [:new, :create, :index, :show]
   end
 
-  get '/cuisines/:id/meals/new' => 'meals#new'
+  # get '/cuisines/:id/meals/new' => 'meals#create'
 
   resources :meals
 

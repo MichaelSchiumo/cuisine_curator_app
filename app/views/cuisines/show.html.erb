@@ -4,6 +4,6 @@
 Classification:<h2><%= @cuisine.classification %></h2>
 
 Add a Meal to <%= "#{@cuisine.classification} Cuisine" %><br>
-<%= link_to "Create Meal", "/attractions/meals/new" %><br><br/ >
+<%= link_to "Create Meal", new_meal_path %><br><br/ >
 
 <%= link_to "Edit Cuisine", edit_cuisine_path %>

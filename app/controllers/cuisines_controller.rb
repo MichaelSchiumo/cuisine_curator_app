@@ -39,6 +39,6 @@ class CuisinesController < ApplicationController
       end
 
       def cuisine_params
-        params.require(:cuisine).permit(:category, :classification)
+        params.require(:cuisine).permit(:category, :classification, :cuisine_id)
       end
 end

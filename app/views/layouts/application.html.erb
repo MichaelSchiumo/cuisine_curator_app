@@ -14,7 +14,6 @@
     <% if current_user %>
       <strong><%= link_to "Home", root_url, {class: "navbar-brand"} %></strong>
       <strong><%= link_to "Cuisines", cuisines_path, {class: "navbar-brand"} %></strong>
-      <strong><%= link_to "Meals", meals_path, {class: "navbar-brand"} %></strong>
       <strong><%= link_to "Sign Out", signout_path, {class: "navbar-brand", method: "delete"} %></strong>
     <% else %>
       <strong><%= link_to "Log In", login_path, {class: "navbar-brand"} %></strong>
