@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   # delete '/signout' => 'sessions#destroy'
   delete '/signout' => 'sessions#destroy'
 
+  get '/auth/google_oauth2/callback' => 'sessions#create_from_omniauth'
+
 end

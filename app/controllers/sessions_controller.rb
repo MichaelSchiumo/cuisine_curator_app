@@ -17,12 +17,11 @@ class SessionsController < ApplicationController
   end
 
   def create_from_omniauth
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
-      u.name = 'auth'['info']['name']
-      u.password = SecureRandom.hex
+    @user = User.find_or_create_by(:name => auth[:info][:name]) do |user|
+      user.email = auth[:info][:email]
     end
     session[:user_id] = @user.id
-    redirect_to user_path(@user)  
+    redirect_to user_path(@user)
   end
 
   def destroy
