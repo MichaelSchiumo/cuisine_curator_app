@@ -1,0 +1,14 @@
+<h1>Your @cuisine.classification Meals</h1>
+
+<% @meals.each do |meal| %>
+  <li><%= link_to meal.name, meal_path(meal) %></li>
+  Name: <%= meal.name %>
+  Course: <%= meal.course %>
+  Difficulty (out of 5): <%= meal.difficulty %> /5
+  Rating (out of 10): <%= meal.rating %> /10
+  Prep Time: <%= meal.prep_time %> mins.
+  Notes: <%= meal.notes %>
+  Ingredients: <%= meal.ingredients %>
+<% end %>
+
+<li><%= link_to "Add a New Meal", new_meal_path %></li>
