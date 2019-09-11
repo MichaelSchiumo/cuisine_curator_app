@@ -6,6 +6,7 @@ class Meal < ApplicationRecord
   validates :course, presence: true
   validates :notes, presence: true
   validates :name, uniqueness: true
+  validates :prep_time, presence: true
   #validates :presence
   belongs_to :cuisine
   belongs_to :user

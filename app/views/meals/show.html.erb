@@ -4,7 +4,9 @@
 
 <% if current_user.meals.include?(@meal) %>
   <%= link_to "Edit Meal", edit_meal_path %>
-<% end %>  
+<% end %>
+
+
 # iterate over ingredients @meal.ingredients
 
 #scope method defined in meal.rb,
