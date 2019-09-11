@@ -3,7 +3,7 @@ ISSUES
 1. Link back to user profile (navbar)
 2. Scope method, search by ingredient
 3. Display (iterate over) ingredients on meals show page
-4. Meal destroy action
+4. Meal destroy action*
 
 
 
