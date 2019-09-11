@@ -2,7 +2,7 @@
 
 <% @meals.each do |meal| %>
   <center><strong><li><%= link_to meal.name, cuisine_meal_path(@cuisine, meal) %></li><br></center></strong>
-  <center><strong>Rating: <%= meal.rating %>/10<br></center></strong>
+  <center><strong>Rating: <%= meal.rating %>/10<br></center></strong><br>
 <% end %><br>
 
 <center><strong><li><%= link_to "Add a New Meal", new_cuisine_meal_path(@cuisine) %></li><br></strong></center>
