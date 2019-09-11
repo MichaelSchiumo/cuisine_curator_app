@@ -6,4 +6,8 @@ Classification:<h2><%= @cuisine.classification %></h2>
 Add a Meal to <%= "#{@cuisine.classification} Cuisine" %><br>
 <%= link_to "Create Meal", new_cuisine_meal_path(@cuisine) %><br><br/ >
 
-<%= link_to "Edit Cuisine", edit_cuisine_path %>
+<%= link_to "#{@cuisine.classification} Meals", cuisine_meals_path(@cuisine) %>
+
+<% if current_user.cuisines.include?(@cuisine) %>
+  <%= link_to "Edit Cuisine", edit_cuisine_path %>
+<% end %>

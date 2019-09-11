@@ -29,6 +29,14 @@ gem 'omniauth-google-oauth2'
 
 gem 'omniauth'
 
+gem 'dotenv-rails'
+
+gem 'omniauth-google'
+
+gem 'omniauth-facebook'
+
+gem 'jquery-rails'
+gem 'bootstrap-sass'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

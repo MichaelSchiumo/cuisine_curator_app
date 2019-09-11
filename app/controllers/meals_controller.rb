@@ -3,6 +3,7 @@ class MealsController < ApplicationController
 
   def new
     @meal = Meal.new(cuisine_id: params[:cuisine_id])
+    @cuisine = Cuisine.find_by(id: params[:cuisine_id])
   end
 
   # def index
@@ -44,14 +45,18 @@ class MealsController < ApplicationController
     @cuisine = Cuisine.find_by(id: params[:cuisine_id])
     @meal = @cuisine.meals.build(meal_params)
     # @meal = Meal.create(user_id: params[:user_id], cuisine_id: params[:cuisine_id])
-    @meal.save
+    if @meal.save
       # flash[:message] = "Your meal has been created."
       redirect_to cuisine_meals_path(@cuisine)
+    else
+      #error message
+      render :new
+    end
   end
 
   private
     def meal_params
-      params.require(:meal).permit(:course, :difficulty, :rating, :name, :prep_time, :notes, :ingredients, :cuisine_id)
+      params.require(:meal).permit(:course, :difficulty, :rating, :name, :prep_time, :notes, :ingredients, :cuisine_id, :user_id)
     end
 
     def set_meal
