@@ -1,6 +1,6 @@
 <h1><%= @meal.name %></h1>
 
-
+<%= button_to "Delete Meal", meal_path(@meal), :method => "delete" %>
 # iterate over ingredients @meal.ingredients
 
 #scope method defined in meal.rb,
