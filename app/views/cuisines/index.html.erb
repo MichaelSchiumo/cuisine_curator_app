@@ -1,11 +1,11 @@
 <h1>Your Cuisines:</h1>
 
-Add To Your Collection!<br>
-<%= link_to "Add New Cuisine", new_cuisine_path %>
+Add To Your Collection!<br><br/ >
+<%= link_to "Add New Cuisine", new_cuisine_path %><br><br/ >
 
 <% @cuisines.each do |cuisine| %>
   Category: <%= cuisine.category %><br><br />
   Classification: <%= cuisine.classification %><br><br/ >
   <li><%= link_to "Go to #{cuisine.classification} Cuisine", cuisine_path(cuisine) %></li><br><br/ >
-  
+
 <% end %>

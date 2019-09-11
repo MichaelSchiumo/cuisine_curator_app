@@ -54,6 +54,12 @@ class MealsController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @meal = Meal.find(params[:id])
+  #   @meal.destroy
+  #   redirect_to meals_path
+  # end
+
   private
     def meal_params
       params.require(:meal).permit(:course, :difficulty, :rating, :name, :prep_time, :notes, :ingredients, :cuisine_id, :user_id)

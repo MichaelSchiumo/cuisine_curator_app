@@ -1,4 +1,4 @@
-<h1>Your <%= @cuisine.classification %> Meals</h1>
+<h1>Your Meals</h1>
 
 <% @meals.each do |meal| %>
   <li><%= link_to meal.name, cuisine_meal_path(@cuisine, meal) %></li>
