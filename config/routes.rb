@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :ingredients
+
   get '/login' => 'sessions#new'
 
   post '/login' => 'sessions#create'

@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     end
     access_token = request.env["omniauth.auth"]
     refresh_token = access_token.credentials.refresh_token
-    @user.google_refresh_token = refresh_token if refresh_token.present?
+    user.google_refresh_token = refresh_token if refresh_token.present?
     session[:user_id] = @user.id
     redirect_to user_path(@user)
   end
