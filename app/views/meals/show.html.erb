@@ -8,10 +8,14 @@
   <%= link_to "Edit Meal", edit_meal_path %>
 <% end %>
 
+<% if current_user.meals.include?(@meal) %>
+  <%= button_to "Delete Meal", meal_path(@meal), :method =>"delete"  %>
+<% end %>
 
-# iterate over ingredients @meal.ingredients
+
+<%# # iterate over ingredients @meal.ingredients
 
 #scope method defined in meal.rb,
 #custom view for meals index (insert search form)
 #search for meals by specific ingredient (uniq)
-#ingredients will not be nested
+#ingredients will not be nested %>

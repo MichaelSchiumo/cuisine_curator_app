@@ -1,0 +1,19 @@
+
+ISSUES
+1. Link back to user profile (navbar)
+2. Scope method, search by ingredient
+3. Display (iterate over) ingredients on meals show page
+4. Meal destroy action
+
+
+
+
+
+
+
+
+-Possible search form for scope method
+<%= form_tag(meals_path method: :get) do %>
+  Search by Ingredient <%= text_field_tag :ingredient %>
+  <%= submit_tag 'Search' %>
+<% end %>
