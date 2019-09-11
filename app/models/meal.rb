@@ -10,4 +10,5 @@ class Meal < ApplicationRecord
   #validates :presence
   belongs_to :cuisine
   belongs_to :user
+  has_many :ingredients
 end
