@@ -21,9 +21,19 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_by(:name => auth[:info][:name]) do |user|
       user.email = auth[:info][:email]
     end
+    access_token = request.env["omniauth.auth"]
+    refresh_token = access_token.credentials.refresh_token
+    @user.google_refresh_token = refresh_token if refresh_token.present?
     session[:user_id] = @user.id
     redirect_to user_path(@user)
   end
+
+  def self.from_omniauth(auth)
+    where(email: auth.info.email).first_or_initialize do |user|
+      user.name = auth.info.name
+      user.email = auth.info.email
+   end
+ end
 
   def destroy
     session.destroy
