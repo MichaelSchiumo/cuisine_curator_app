@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
   def create_from_omniauth
     @user = User.find_or_create_by(:name => auth[:info][:name]) do |user|
       user.email = auth[:info][:email]
+      user.password = auth[:info][:last_name]
     end
     access_token = request.env["omniauth.auth"]
     refresh_token = access_token.credentials.refresh_token
