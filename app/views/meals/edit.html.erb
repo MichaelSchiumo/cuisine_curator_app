@@ -1,3 +1,9 @@
 <h1>Edit Meal</h1>
 
+<% if @meal.errors.any? %>
+  <% @meal.errors.full_messages.each do |msg| %>
+  <h2><%= msg %></h2>
+  <% end %>
+<% end %>
+
 <%= render partial: 'form', locals: {meal: @meal} %>
