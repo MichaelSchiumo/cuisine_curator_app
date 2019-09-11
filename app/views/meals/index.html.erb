@@ -1,15 +1,9 @@
-<h1>Your <%= @cuisine.classification %> Meals</h1>
+<center><h1>Your <%= @cuisine.classification %> Meals</h1></center>
 
 <% @meals.each do |meal| %>
-  <li><%= link_to meal.name, cuisine_meal_path(@cuisine, meal) %></li>
-  Name: <%= meal.name %>
-  Course: <%= meal.course %>
-  Difficulty: <%= meal.difficulty %>/5
-  Rating: <%= meal.rating %>/10
-  Prep Time: <%= meal.prep_time %> mins.
-  Notes: <%= meal.notes %>
-  Ingredients: <%= meal.ingredients %>
-<% end %>
+  <center><strong><li><%= link_to meal.name, cuisine_meal_path(@cuisine, meal) %></li><br></center></strong>
+  <center><strong>Rating: <%= meal.rating %>/10<br></center></strong>
+<% end %><br>
 
-<li><%= link_to "Back to #{@cuisine.classification} Cuisine", cuisine_path(@cuisine) %></li>
-<li><%= link_to "Add a New Meal", new_cuisine_meal_path(@cuisine) %></li>
+<center><strong><li><%= link_to "Add a New Meal", new_cuisine_meal_path(@cuisine) %></li><br></strong></center>
+<center><strong><li><%= link_to "Back to #{@cuisine.classification} Cuisine", cuisine_path(@cuisine) %></li><center><strong>
