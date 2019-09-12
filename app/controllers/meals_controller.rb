@@ -24,6 +24,12 @@ class MealsController < ApplicationController
     end
   end
 
+  def scoped_index
+    @cuisine = Cuisine.find_by(id: params[:cuisine_id])
+    @meals = Meal.search_by_rating(params[:rating].to_i)
+    render :index
+  end
+
 
   def show
   end

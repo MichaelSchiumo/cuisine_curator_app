@@ -14,6 +14,8 @@
   <%= f.text_area :ingredients %><br>
   <%= f.label :notes %><br>
   <%= f.text_area :notes %><br><br/ >
+  Description (optional)<br>
+  <%= f.text_area :description %><br><br/>
   <%= f.hidden_field :cuisine_id %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.submit %>

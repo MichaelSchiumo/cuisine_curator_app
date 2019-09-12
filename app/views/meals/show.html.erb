@@ -1,10 +1,38 @@
-<h1><%= @meal.name %></h1>
+<center><h1><%= @meal.name %></h1></center>
+<center><h3><%= @meal.description %></h3></center>
 
+<center><h3>Course: <%= @meal.course %></h3></center>
+<center><h3>Difficulty Level: <%= @meal.difficulty %></h3></center>
+<center><h3>Rating: <%= @meal.rating %></h3></center>
+<center><h3>Prep Time: <%= @meal.prep_time %> minutes</h3></center>
+
+
+
+<% Meal.sorted_by_rating %>
 
 
 <% if current_user.meals.include?(@meal) %>
-  <%= link_to "Edit Meal", edit_meal_path %>
-<% end %>
+  <center><%= link_to "Edit Meal", edit_meal_path %></center>
+<% end %><br><br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <%# if current_user.meals.include?(@meal) %>
   <%#= button_to "Delete Meal", meal_path(@meal), :method =>"delete"  %>

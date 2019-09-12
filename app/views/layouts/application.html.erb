@@ -13,6 +13,8 @@
   </head>
 
   <body>
+
+
     <!-- <div class='col-xs-3'> -->
     <% if current_user %>
       <strong><%= link_to "Home", root_url, {class: "navbar-brand"} %></strong>
@@ -26,12 +28,17 @@
     <% end %>
 
 
-
     <%= yield %>
 
 
-
+    <div id="wrapper">
+    <div id="footer">
+      <h3>This is a Michael J. Schiumo™ production.</h3>
+    </div>
+    </div>
 
   </body>
-  <h3>This is a Michael J. Schiumo™ production.</h3>
+
+
+
 </html>
