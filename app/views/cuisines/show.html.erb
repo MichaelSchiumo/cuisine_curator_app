@@ -1,12 +1,12 @@
 
-<br><br />Category:<h2><%= @cuisine.category %></h2>
+<br><br /><h1>Category:</h1>
+<h3><%= @cuisine.category %></h3>
 
-Classification:<h2><%= @cuisine.classification %></h2>
+<h1>Classification:</h1>
+<h3><%= @cuisine.classification %></h3>
 
-<%= link_to "#{@cuisine.classification} Meals", cuisine_meals_path(@cuisine) %><br></br>
+<%= link_to "View #{@cuisine.classification} Meals", cuisine_meals_path(@cuisine) %><br></br>
 
-Add a Meal to <%= "#{@cuisine.classification} Cuisine" %><br><br/>
-<%= link_to "Create #{@cuisine.classification} Meal", new_cuisine_meal_path(@cuisine) %><br><br/ >
 
 <% if current_user.cuisines.include?(@cuisine) %>
   <%= link_to "Edit #{@cuisine.classification} Cuisine", edit_cuisine_path %>
