@@ -13,15 +13,15 @@
 
 <% if current_user.meals.include?(@meal) %>
   <center><%= link_to "Edit Meal", edit_meal_path %></center>
-<% end %><br><br />
+<% end %><br>
 
 <%# if current_user.meals.include?(@meal) %>
   <%#= button_to "Delete Meal", meal_path(@meal), :method =>"delete"  %>
 <%# end %>
 
 
-<%= button_to "Delete Meal", { action: "destroy", cuisine_id: @cuisine.id, id: @meal.id },
-    method: :delete, data: { confirm: "Are you sure?" } %>
+<center><%= link_to "Delete Meal", { action: "destroy", cuisine_id: @cuisine.id, id: @meal.id },
+    method: :delete, data: { confirm: "Are you sure?" } %></center>
 
 
 #iterate over ingredients @meal.ingredients
