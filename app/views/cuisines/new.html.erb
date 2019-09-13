@@ -1,3 +1,14 @@
 <h1>Create Your Cuisine!</h1>
 
+<% if @cuisine.errors.any? %>
+  <div id="error_explanation">
+    <h2>There were some errors:</h2>
+    <ul>
+      <% @cuisine.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= render partial: 'form', locals: {cuisine: @cuisine} %>
