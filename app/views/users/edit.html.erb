@@ -1,10 +1,12 @@
-<h1>Edit User Profile</h1>
+<center><h1>Edit User Profile</h1><center>
+
+<center><%= image_tag "https://www.incimages.com/uploaded_files/image/970x450/getty_467176954_264026.jpg" %>
 
 <%= form_for @user do |f| %>
 
-Email:<br><%= f.text_field :email %><br><br />
-Username:<br><%= f.text_field :name %><br><br/>
-Years Experience:<br><%= f.number_field :years_experience %><br><br/>
-Location:<br><%= f.text_field :location %><br>
+<center>Email:<br><%= f.text_field :email %><br><br /><center>
+<center>Username:<br><%= f.text_field :name %><br><br/><center>
+<center>Years Experience:<br><%= f.number_field :years_experience %><br><br/><center>
+<center>Location:<br><%= f.text_field :location %><br><center>
 <%= f.submit %>
 <% end %>

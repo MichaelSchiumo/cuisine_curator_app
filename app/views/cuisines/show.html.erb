@@ -9,9 +9,15 @@
 <h3><%= @cuisine.classification %></h3>
 
 <% if @cuisine.classification == "Slovak" %>
-  <%= image_tag "https://lonelyplanetimages.imgix.net/mastheads/86485979.jpg?sharp=10&vib=20&w=1200" %>
+  <center><%= image_tag "https://lonelyplanetimages.imgix.net/mastheads/86485979.jpg?sharp=10&vib=20&w=1200" %><center>
 <% elsif @cuisine.classification == "Italian" %>
-  <%= image_tag "https://exclusivesmedia.webjet.com.au/uploads/2016/09/Image11-47.jpg" %>
+  <center><%= image_tag "https://exclusivesmedia.webjet.com.au/uploads/2016/09/Image11-47.jpg" %><center>
+<% elsif @cuisine.classification == "Central Asian" %>
+  <center><%= image_tag "https://media.gadventures.com/media-server/cache/b0/32/b032af5b1b1392f9ff92d1ecef0b2bd4.jpg" %><center>
+<% elsif @cuisine.classification == "Mediterranean" %>
+  <center><%= image_tag "https://www.healthline.com/hlcmsresource/images/topic_centers/Food-Nutrition/1296x728_HEADER_15_Healthy_Mediterranean_Style_Appetizer_Recipes.jpg" %><center>
+<% elsif @cuisine.classification == "Russian" %>
+  <center><%= image_tag "http://russiatrek.org/blog/wp-content/uploads/2014/09/staraya-ladoga-russia-2.jpg" %><center>
 <% end %><br><br />
 
 <%= link_to "View #{@cuisine.classification} Meals", cuisine_meals_path(@cuisine) %><br></br>

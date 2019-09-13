@@ -1,14 +1,20 @@
 
-<span style="text-decoration: underline;"><center><h1><%= current_user.name %>'s <%= @cuisine.classification %> Meals</h1></center></span>
+<span style="text-decoration: underline;"><center><h1><i><%= current_user.name %>'s <%= @cuisine.classification %> Meals</i></h1></center></span>
 
 <% if flash[:message] %>
   <%= flash[:message] %>
 <% end %>
 
 <% if @cuisine.classification == "Italian" %>
-<center><%= image_tag "https://cdn.websites.hibu.com/533c448531fc412eb9cff9ae03178687/dms3rep/multi/mobile/small-3.jpg" %><center>
+  <center><%= image_tag "https://cdn.websites.hibu.com/533c448531fc412eb9cff9ae03178687/dms3rep/multi/mobile/small-3.jpg" %><center>
 <% elsif @cuisine.classification == "Slovak" %>
-<center><%= image_tag "http://bratislavafoodtours.com/wp-content/uploads/2016/12/slovak-soup-kapustnica.jpg" %><center>
+  <center><%= image_tag "http://bratislavafoodtours.com/wp-content/uploads/2016/12/slovak-soup-kapustnica.jpg" %><center>
+<% elsif @cuisine.classification == "Mediterranean" %>
+  <center><%= image_tag "https://www.telegraph.co.uk/content/dam/Travel/Cruise/Mediterraneancruisesafirsttimecruisersguide/iStock-638935928-med_cropped-xlarge.jpg" %><center>
+<% elsif @cuisine.classification == "Central Asian" %>
+  <center><%= image_tag "https://www.wildernesstravel.com/images/trips/asia/kazakstan/central-asia-explorer/2-slide-central-asia-kazakhstan-silk-road-yurt-pano.jpg" %><center>
+<% elsif @cuisine.classification == "Russian" %>
+  <center><%= image_tag "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Russia/st-petersburg/St-Petersburg-nighttime-cropped-xlarge.jpg" %><center>
 <% end %><br>
 
 <% if @meals.length < 1 %>
