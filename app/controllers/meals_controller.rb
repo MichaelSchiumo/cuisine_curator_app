@@ -1,9 +1,10 @@
 class MealsController < ApplicationController
   before_action :set_meal, only: [:edit, :show, :update]
+  before_action :set_cuisine, only: [:new, :index, :scoped_index, :show, :create, :destroy]
 
   def new
     @meal = Meal.new(cuisine_id: params[:cuisine_id])
-    @cuisine = Cuisine.find_by(id: params[:cuisine_id])
+    # @cuisine = Cuisine.find_by(id: params[:cuisine_id])
   end
 
   # def index
@@ -13,7 +14,7 @@ class MealsController < ApplicationController
 
   def index
     if params[:cuisine_id]
-      @cuisine = Cuisine.find_by(id: params[:cuisine_id])
+      # @cuisine = Cuisine.find_by(id: params[:cuisine_id])
       if @cuisine.nil?
         redirect_to cuisines_path, flash[:message] = "Cuisine not Found."
       else
@@ -25,30 +26,32 @@ class MealsController < ApplicationController
   end
 
   def scoped_index
-    @cuisine = Cuisine.find_by(id: params[:cuisine_id])
+    # @cuisine = Cuisine.find_by(id: params[:cuisine_id])
     @meals = Meal.search_by_rating(params[:rating].to_i)
     render :index
   end
 
 
   def show
+    # @cuisine = Cuisine.find_by(id: params[:cuisine_id])
   end
 
   def edit
   end
 
   def update
+    @cuisine = Cuisine.find_by(id: params[:meal][:cuisine_id])
     @meal.update(meal_params)
     if @meal.save
       flash[:message] = "Your meal has been updated!"
-      redirect_to meal_path(@meal)
+      redirect_to cuisine_meal_path(@cuisine, @meal)
     else
       render :edit
     end
   end
 
   def create
-    @cuisine = Cuisine.find_by(id: params[:cuisine_id])
+    # @cuisine = Cuisine.find_by(id: params[:cuisine_id])
     @meal = @cuisine.meals.build(meal_params)
     # @meal = Meal.create(user_id: params[:user_id], cuisine_id: params[:cuisine_id])
     if @meal.save
@@ -60,11 +63,12 @@ class MealsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @meal = Meal.find(params[:id])
-  #   @meal.destroy
-  #   redirect_to meals_path
-  # end
+  def destroy
+    # @cuisine = Cuisine.find_by(id: params[:cuisine_id])
+    @meal = Meal.find(params[:id])
+    @meal.destroy
+    redirect_to cuisine_meals_path(@cuisine)
+  end
 
   private
     def meal_params
@@ -73,5 +77,9 @@ class MealsController < ApplicationController
 
     def set_meal
       @meal = Meal.find(params[:id])
+    end
+
+    def set_cuisine
+      @cuisine = Cuisine.find_by(id: params[:cuisine_id])
     end
 end
