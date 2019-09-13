@@ -43,7 +43,6 @@ class MealsController < ApplicationController
     @cuisine = Cuisine.find_by(id: params[:meal][:cuisine_id])
     @meal.update(meal_params)
     if @meal.save
-      flash[:message] = "Your meal has been updated!"
       redirect_to cuisine_meal_path(@cuisine, @meal)
     else
       render :edit

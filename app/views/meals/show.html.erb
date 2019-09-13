@@ -1,10 +1,20 @@
-<center><h1><%= @meal.name %></h1></center>
-<center><h3><%= @meal.description %></h3></center>
+<i><span style="text-decoration: underline;"><center><h1><%= @meal.name %></h1></center></span></i>
 
+<% if @meal.name == "Halushki" %>
+  <center><%= image_tag "http://images.media-allrecipes.com/userphotos/720x405/2490873.jpg" %></center>
+<% elsif @meal.name == "Spaghetti and Meatballs" %>
+  <center><%= image_tag "https://smittenkitchendotcom.files.wordpress.com/2019/03/perfect-spaghetti-and-meatballs.jpg?w=1200" %><center>
+<% end %>
+
+<center><h3><%= @meal.description %></h3></center>
 <center><h3>Course: <%= @meal.course %></h3></center>
 <center><h3>Difficulty Level: <%= @meal.difficulty %></h3></center>
 <center><h3>Rating: <%= @meal.rating %></h3></center>
 <center><h3>Prep Time: <%= @meal.prep_time %> minutes</h3></center>
+<center><h3>Ingredients: <%= @meal.ingredients %></h3><center>
+<center><h3>Notes: <%= @meal.notes %></h3><center>
+
+
 
 
 
@@ -15,6 +25,8 @@
   <center><%= link_to "Edit Meal", edit_meal_path %></center>
 <% end %><br>
 
+<center><%= link_to "Back to Meals", cuisine_meals_path(@cuisine) %></center><br>
+
 <%# if current_user.meals.include?(@meal) %>
   <%#= button_to "Delete Meal", meal_path(@meal), :method =>"delete"  %>
 <%# end %>
@@ -22,11 +34,3 @@
 
 <center><%= link_to "Delete Meal", { action: "destroy", cuisine_id: @cuisine.id, id: @meal.id },
     method: :delete, data: { confirm: "Are you sure?" } %></center>
-
-
-#iterate over ingredients @meal.ingredients
-
-#scope method defined in meal.rb,
-#custom view for meals index (insert search form)
-#search for meals by specific ingredient (uniq)
-#ingredients will not be nested %>

@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+gem 'bootstrap-sass', '~> 3.2.0'
+
+gem 'autoprefixer-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
@@ -36,7 +40,7 @@ gem 'omniauth-google'
 gem 'omniauth-facebook'
 
 gem 'jquery-rails'
-gem 'bootstrap-sass'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

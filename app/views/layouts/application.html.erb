@@ -3,12 +3,11 @@
 <!-- Latest compiled and minified CSS -->
   <head>
 
-
     <title>CuisineCuratorApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -18,6 +17,7 @@
     <!-- <div class='col-xs-3'> -->
     <% if current_user %>
       <strong><%= link_to "Home", root_url, {class: "navbar-brand"} %></strong>
+      <strong><%= link_to "Profile", user_path(current_user), {class: "navbar-brand"} %></strong>
       <strong><%= link_to "Cuisines", cuisines_path, {class: "navbar-brand"} %></strong>
       <strong><%= link_to "Sign Out", signout_path, {class: "navbar-brand", method: "delete"} %></strong>
     <% else %>

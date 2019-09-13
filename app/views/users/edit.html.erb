@@ -1,0 +1,10 @@
+<h1>Edit User Profile</h1>
+
+<%= form_for @user do |f| %>
+
+Email:<br><%= f.text_field :email %><br><br />
+Username:<br><%= f.text_field :name %><br><br/>
+Years Experience:<br><%= f.number_field :years_experience %><br><br/>
+Location:<br><%= f.text_field :location %><br>
+<%= f.submit %>
+<% end %>

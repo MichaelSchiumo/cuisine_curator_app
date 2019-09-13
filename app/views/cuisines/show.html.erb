@@ -1,9 +1,18 @@
 
-<br><br /><h1>Category:</h1>
-<h3><%= @cuisine.category %></h3>
+
+
+<center><br><br /><h1>Category:</h1><center>
+<center><h3><%= @cuisine.category %></h3><center>
+
 
 <h1>Classification:</h1>
 <h3><%= @cuisine.classification %></h3>
+
+<% if @cuisine.classification == "Slovak" %>
+  <%= image_tag "https://lonelyplanetimages.imgix.net/mastheads/86485979.jpg?sharp=10&vib=20&w=1200" %>
+<% elsif @cuisine.classification == "Italian" %>
+  <%= image_tag "https://exclusivesmedia.webjet.com.au/uploads/2016/09/Image11-47.jpg" %>
+<% end %><br><br />
 
 <%= link_to "View #{@cuisine.classification} Meals", cuisine_meals_path(@cuisine) %><br></br>
 

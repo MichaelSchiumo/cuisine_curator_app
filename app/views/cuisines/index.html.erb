@@ -1,13 +1,17 @@
-<h1><%= current_user.name %>'s Cuisines:</h1>
+<strong><center><h1><b><i><em><p style="color:DodgerBlue;"><span style="text-decoration: underline;">Cuisine Curator Dashboard</span></p></em></i></b></h1></center></strong></p>
+
+<center><%= image_tag('https://www.ecpi.edu/sites/default/files/culinary_14.png') %><center>
+
+<center><h2><%= current_user.name %>'s Cuisines:</h2><center>
 
 
 
 <% @cuisines.each do |cuisine| %>
-  Category: <%= cuisine.category %><br><br />
-  Classification: <%= cuisine.classification %><br><br/ >
-  <li><%= link_to "Go to #{cuisine.classification} Cuisine", cuisine_path(cuisine) %></li><br><br/ >
+  <center><span style="text-decoration: underline;"><h3>Category:</h3></span><%= cuisine.category %><center><br>
+  <center><span style="text-decoration: underline;"><h3>Classification:</h3></span><%= cuisine.classification %><center><br>
+  <center><%= link_to "Go to #{cuisine.classification} Cuisine", cuisine_path(cuisine) %><br><center>
 
 <% end %>
 
-Add To Your Collection!<br><br/ >
-<li><%= link_to "Add New Cuisine", new_cuisine_path %></li><br><br/ >
+<center><h4>Add To Your Collection!</h4><center>
+<center><%= link_to "Add New Cuisine", new_cuisine_path %><br><br/ ><center>

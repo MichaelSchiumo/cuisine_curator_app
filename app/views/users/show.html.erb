@@ -1,10 +1,13 @@
-<h2>Welcome, <%= @user.name %>. Let's start cooking!</h2>
+<center><h2>Welcome, <%= @user.name %>. Let's start cooking!</h2><center>
 
-<strong>Your Years of Experience: <strong><h3><%= @user.years_experience %></h3><strong><br><br/ >
-<strong>Your location<strong><h3><%= @user.location %></h3><strong><br><br/>
+  <center><%= image_tag "http://guyanachronicle.com/wp-content/uploads/2015/04/Culinary-arts.jpg" %>
 
-<h3>Search existing cuisines!</h3>
+<center><strong><h3><b>Your Years of Experience:</h3><b><strong><h2><%= @user.years_experience %></h2><strong><br><center>
+<center><strong><h3><b>Your location:<strong><b><h3><%= @user.location %></h3><strong><center><br>
+
+<center><h3>Search existing cuisines!</h3><center>
 <i><%= link_to "Search Cuisines", cuisines_path %><br><br/ ></i>
 
 <h3>Create Your Curated Cuisine Collection</h3>
-<i><%= link_to "Create Cuisine", new_cuisine_path %></i>
+<i><%= link_to "Create Cuisine", new_cuisine_path %></i><br /><br><br>
+<i><%= link_to "Edit User Profile", edit_user_path %></i>

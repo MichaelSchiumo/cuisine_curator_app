@@ -1,23 +1,33 @@
 
-<form action="/rated_meals" method="get">
- <input type="number" name="rating">
- <input type="hidden" id="cuisine_id" name="cuisine_id" value=<%= @cuisine.id %>/>
- <input type="submit" name="Submit">
-</form>
-
-
-
-
 <span style="text-decoration: underline;"><center><h1><%= current_user.name %>'s <%= @cuisine.classification %> Meals</h1></center></span>
+
+<% if flash[:message] %>
+  <%= flash[:message] %>
+<% end %>
+
+<% if @cuisine.classification == "Italian" %>
+<center><%= image_tag "https://cdn.websites.hibu.com/533c448531fc412eb9cff9ae03178687/dms3rep/multi/mobile/small-3.jpg" %><center>
+<% elsif @cuisine.classification == "Slovak" %>
+<center><%= image_tag "http://bratislavafoodtours.com/wp-content/uploads/2016/12/slovak-soup-kapustnica.jpg" %><center>
+<% end %><br>
 
 <% if @meals.length < 1 %>
   <h3>Sorry, there are no meals with this rating.</h3>
 <% else %>
   <% @meals.each do |meal| %>
-    <center><strong><li><%= link_to meal.name, cuisine_meal_path(@cuisine, meal) %></li><br></center></strong>
-    <center><strong>Rating: <%= meal.rating %>/10<br></center></strong><br>
-  <% end %><br>
+    <center><strong><b><%= link_to meal.name, cuisine_meal_path(@cuisine, meal) %><br></b></center><strong><br>
+    <center><strong>Rating: <%= meal.rating %>/10<br></center><strong><br>
+  <% end %>
 <% end%>
 
-<center><strong><li><%= link_to "Add a New Meal", new_cuisine_meal_path(@cuisine) %></li><br></strong></center>
-<center><strong><li><%= link_to "Back to #{@cuisine.classification} Cuisine", cuisine_path(@cuisine) %></li><center><strong>
+
+
+<center><strong><%= link_to "Add a New Meal", new_cuisine_meal_path(@cuisine) %><br></br></strong></center>
+<center><strong><%= link_to "Back to #{@cuisine.classification} Cuisine", cuisine_path(@cuisine) %><center><strong><br><br/ >
+
+  Search <%= @cuisine.classification %> Meals by Rating(1 to 10):
+  <form action="/rated_meals" method="get">
+   <input type="number" name="rating">
+   <input type="hidden" id="cuisine_id" name="cuisine_id" value=<%= @cuisine.id %>/>
+   <input type="submit" name="Submit">
+  </form><br>
