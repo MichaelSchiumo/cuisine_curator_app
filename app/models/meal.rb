@@ -14,8 +14,11 @@ class Meal < ApplicationRecord
 
 
   scope :search_by_rating, -> (rating){where("rating = ?", rating)}
+  # scope :quickest_recipe, -> {joins(:meals).group('meals.id').order('COUNT("meals.meal_count") DESC')}
+  scope :for_dinner, -> {where(course: "Dinner") }
 
-  scope :most_well_known, -> {joins(:characters).group('songs.id').order('COUNT("characters.character_count") DESC')}
+  # scope :most_well_known, -> {joins(:characters).group('songs.id').order('COUNT("characters.character_count") DESC')}
+  # scope :most_well_known, -> {joins(:characters).group('songs.id').order('COUNT("characters.character_count") DESC')}
 
   def self.sorted_by_rating
    self.all.sort do |meal1, meal2|

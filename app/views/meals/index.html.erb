@@ -27,11 +27,10 @@
 <% end%>
 
 
-
 <center><strong><%= link_to "Add a New Meal", new_cuisine_meal_path(@cuisine) %><br></br></strong></center>
 <center><strong><%= link_to "Back to #{@cuisine.classification} Cuisine", cuisine_path(@cuisine) %><center><strong><br><br/ >
 
-  Search <%= @cuisine.classification %> Meals by Rating(1 to 10):
+  Search Meals by Rating(1 to 10):
   <form action="/rated_meals" method="get">
    <input type="number" name="rating">
    <input type="hidden" id="cuisine_id" name="cuisine_id" value=<%= @cuisine.id %>/>

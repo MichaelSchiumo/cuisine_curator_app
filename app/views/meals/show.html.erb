@@ -42,10 +42,7 @@
 
 
 
-
-
-<% Meal.sorted_by_rating %>
-
+<%# <% Meal.quick_recipe %>
 
 <% if current_user.meals.include?(@meal) %>
   <center><%= link_to "Edit Meal", edit_meal_path %></center>

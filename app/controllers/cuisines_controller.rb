@@ -10,7 +10,7 @@ class CuisinesController < ApplicationController
     if @cuisine.save
       redirect_to cuisine_path(@cuisine)
     else
-      redirect_to :new
+      render :new
     end
   end
 
