@@ -1,13 +1,13 @@
 
 <%= form_for ([@cuisine, @meal]) do |f| %>
-  <%= f.label :name %><br>
+  <b><%= f.label :name %><b><br>
   <%= f.text_field :name %><br><br/ >
   <%= f.label :course %><br>
   <%= f.text_field :course %><br><br/ >
   <%= f.label :difficulty %><br>
   <%= f.number_field :difficulty %><br><br/ >
   <%= f.label :rating %><br>
-  <%= f.number_field :rating %><br><br />
+  <%= f.number_field :rating %><br><br/ >
   <%= f.label :prep_time %><br>
   <%= f.number_field :prep_time %><br><br />
   <%= f.label :ingredients %><br>

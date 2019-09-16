@@ -31,6 +31,11 @@ class MealsController < ApplicationController
     render :index
   end
 
+  def scoped_index2
+    @cuisine = Cuisine.find_by(id: params[:cuisine_id])
+    @meals = Meal.for_dinner
+    render :index
+  end
 
   def show
     # @cuisine = Cuisine.find_by(id: params[:cuisine_id])

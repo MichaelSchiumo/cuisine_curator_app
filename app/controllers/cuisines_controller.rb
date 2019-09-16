@@ -33,6 +33,13 @@ class CuisinesController < ApplicationController
     end
   end
 
+  def destroy
+    # @cuisine = Cuisine.find_by(id: params[:cuisine_id])
+    @cuisine = Cuisine.find(params[:id])
+    @cuisine.destroy
+    redirect_to cuisines_path(@cuisine)
+  end
+
   private
       def set_cuisine
         @cuisine = Cuisine.find(params[:id])

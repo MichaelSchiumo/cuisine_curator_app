@@ -1,6 +1,18 @@
+
 <center><h1>Edit User Profile</h1><center>
 
 <center><%= image_tag "https://www.incimages.com/uploaded_files/image/970x450/getty_467176954_264026.jpg" %>
+
+  <% if @user.errors.any? %>
+  <div id="error_explanation">
+    <center><h2>There were some errors:</h2><center>
+    <ul>
+      <center><% @user.errors.full_messages.each do |msg| %><center>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %><br></br>
 
 <%= form_for @user do |f| %>
 

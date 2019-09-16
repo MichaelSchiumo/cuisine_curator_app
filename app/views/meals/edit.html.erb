@@ -1,14 +1,16 @@
-<h1>Edit Meal</h1>
+<center><h1>Edit Meal</h1><center>
+
+<%= image_tag "http://www.orange-lantern.com/wp-content/uploads/2015/11/Buy-vietnam-food-in-singapore.jpg" %><br><br />
 
 <% if @meal.errors.any? %>
   <div id="error_explanation">
     <h2>There were some errors:</h2>
     <ul>
-      <% @meal.errors.full_messages.each do |msg| %>
+      <center><% @meal.errors.full_messages.each do |msg| %><center>
         <li><%= msg %></li>
       <% end %>
     </ul>
   </div>
-<% end %>
+<% end %><br><br />
 
 <%= render partial: 'form', locals: {meal: @meal} %>

@@ -25,4 +25,9 @@
 
 <% if current_user.cuisines.include?(@cuisine) %>
   <%= link_to "Edit #{@cuisine.classification} Cuisine", edit_cuisine_path %>
-<% end %>
+<% end %><br><br />
+
+<%= link_to "Back to Cuisines", cuisines_path %><br><br />
+
+<center><%= link_to "Delete Cuisine", { action: "destroy", cuisine_id: @cuisine.id},
+    method: :delete, data: { confirm: "Are you sure?" } %></center>
