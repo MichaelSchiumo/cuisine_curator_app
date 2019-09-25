@@ -46,7 +46,10 @@ class MealsController < ApplicationController
 
   def update
     @cuisine = Cuisine.find_by(id: params[:meal][:cuisine_id])
+    if current_user.meals.include?(@meal)
+
     @meal.update(meal_params)
+    end
     if @meal.save
       redirect_to cuisine_meal_path(@cuisine, @meal)
     else
