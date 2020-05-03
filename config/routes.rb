@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   # get '/cuisines/:id/meals/new' => 'meals#create'
 
-  get '/rated_meals' => 'meals#scoped_index'
+  # get '/rated_meals' => 'meals#scoped_index'
 
-  get '/for_dinner' => 'meals#scoped_index2'
+  # get '/for_dinner' => 'meals#scoped_index2'
 
   resources :meals
 
