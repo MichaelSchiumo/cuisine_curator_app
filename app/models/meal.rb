@@ -13,14 +13,14 @@ class Meal < ApplicationRecord
   # has_many :ingredients
 
 
-  scope :search_by_rating, -> (rating){where("rating = ?", rating)}
-  # scope :quickest_recipe, -> {joins(:meals).group('meals.id').order('COUNT("meals.meal_count") DESC')}
-  scope :for_dinner, -> {where(course: "Dinner") }
+  # scope :search_by_rating, -> (rating){where("rating = ?", rating)}
+  # # scope :quickest_recipe, -> {joins(:meals).group('meals.id').order('COUNT("meals.meal_count") DESC')}
+  # scope :for_dinner, -> {where(course: "Dinner") }
 
-  # scope :starts_with_s, -> {where(name: name.start_with?("s") )}
+  # # scope :starts_with_s, -> {where(name: name.start_with?("s") )}
 
 
-  scope :starts_with_s, -> {where("name like ?", "S%")}
+  # scope :starts_with_s, -> {where("name like ?", "S%")}
 
 
   # Account.where("email like ?", "%olitreadwell%")
