@@ -6,7 +6,7 @@ ruby '2.6.1'
 gem "rubyzip", ">= 1.3.0"
 
 
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.4.1'
 
 gem 'autoprefixer-rails'
 
