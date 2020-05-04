@@ -1,10 +1,4 @@
 GIT
-  remote: https://github.com/codahale/bcrypt-ruby.git
-  revision: 2fbe5418b4fcb8662a6984690796d43489fba3dc
-  specs:
-    bcrypt (3.1.13)
-
-GIT
   remote: https://github.com/faker-ruby/faker.git
   revision: 70349612f4ee3de595f36f71015ad95f39583b71
   branch: master
@@ -63,6 +57,7 @@ GEM
     arel (9.0.0)
     autoprefixer-rails (9.5.1.1)
       execjs
+    bcrypt-ruby (3.1.1.rc1)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
@@ -255,7 +250,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  bcrypt!
+  bcrypt-ruby (= 3.1.1.rc1)
   bootsnap (>= 1.1.0)
   bootstrap-sass (~> 3.2.0)
   byebug
